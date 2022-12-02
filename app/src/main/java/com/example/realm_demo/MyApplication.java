@@ -2,12 +2,12 @@ package com.example.realm_demo;
 
 import android.app.Application;
 
-public class MyApplication extends Application {
-    private Realm realm;
+import io.realm.Realm;
 
+public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        realm = Realm.getInstance();
+        Realm.init(this);
     }
 }

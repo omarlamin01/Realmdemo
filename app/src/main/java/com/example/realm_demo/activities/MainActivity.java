@@ -21,11 +21,19 @@ public class MainActivity extends AppCompatActivity {
         Realm.init(this);
         realm = Realm.getDefaultInstance();
         realm.beginTransaction();
-        Product produit = realm.createObject(Product.class, 1L);
+
+        Product produit = realm.createObject(Product.class, 2L);
         produit.setP_intitule("Ordinateur HP");
         produit.setP_prix(5);
+
+        Product produit1 = realm.createObject(Product.class, 3L);
+        produit.setP_intitule("Ordinateur HP");
+        produit.setP_prix(5);
+
         Achat achat = realm.createObject(Achat.class);
         achat.addProduct(produit);
+        achat.addProduct(produit1);
+
         realm.commitTransaction();
         RealmResults<Product> results = realm
                 .where(Product.class)

@@ -1,5 +1,7 @@
 package com.example.realm_demo.models;
 
+import androidx.annotation.NonNull;
+
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.Required;
@@ -42,5 +44,15 @@ public class Product extends RealmObject {
 
     public void setId_image(int id_image) {
         this.id_image = id_image;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Product {" +
+                "id: " + id + ", " +
+                "p_prix: " + p_prix + ", " +
+                "id_image: " + id_image +
+                "}";
     }
 }

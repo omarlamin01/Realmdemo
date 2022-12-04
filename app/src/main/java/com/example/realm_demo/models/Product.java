@@ -51,6 +51,7 @@ public class Product extends RealmObject {
     public String toString() {
         return "Product {" +
                 "id: " + id + ", " +
+                "p_intitule: " + p_intitule + ", " +
                 "p_prix: " + p_prix + ", " +
                 "id_image: " + id_image +
                 "}";
